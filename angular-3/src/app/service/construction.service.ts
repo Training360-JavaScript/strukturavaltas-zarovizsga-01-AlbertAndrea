@@ -10,7 +10,7 @@ import { Construction } from '../model/construction';
 export class ConstructionService {
 
   apiUrl: string = environment.apiUrl;
-  entityName: string = 'construcions';
+  entityName: string = 'constructions';
 
   constructor(
     private http: HttpClient,
@@ -24,19 +24,19 @@ export class ConstructionService {
     return this.http.get<Construction> (`${this.apiUrl}${this.entityName}/${id}`);
 
   }
-  update(product: Construction): Observable<Construction> {
+  update(construction: Construction): Observable<Construction> {
     return this.http.patch<Construction> (
-      `${this.apiUrl}${this.entityName}/${product.id}`,
-      product
+      `${this.apiUrl}${this.entityName}/${construction.id}`,
+      construction
     );
   }
   delete(id: number): Observable<Construction> {
     return this.http.delete<Construction>(`${this.apiUrl}${this.entityName}/${id}`)
   }
 
-  createProduct(product: Construction): Observable<Construction> {
+  createProduct(construction: Construction): Observable<Construction> {
     let url = this.apiUrl;
-    return this.http.post<Construction>(url, product);
+    return this.http.post<Construction>(url, construction);
   }
 
 }
