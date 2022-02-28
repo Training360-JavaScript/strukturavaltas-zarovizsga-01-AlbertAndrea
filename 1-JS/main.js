@@ -60,9 +60,13 @@ const animals = [{
     "zoo": 9
   }];
 
-const animalFilter = (list = animals, pop, zoo) => {
-    return [];
+  const animalFilter = (list = animals, pop, zoo) => {
+    return list
+        .filter(animal => animal.population > pop && animal.zoo <= zoo )
+        .map(filteredAnimal => filteredAnimal.common_name )
+        .sort();
 };
+
 
 if (typeof module !== 'undefined') {
     module.exports = {
