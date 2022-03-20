@@ -33,7 +33,7 @@ export class CarService {
     return this.http.delete<Car>(`${this.apiUrl}${this.entityName}/${id}`)
   }
 
-  createProduct(car: Car): Observable<Car> {
+  create(car: Car): Observable<Car> {
     let url = this.apiUrl;
     return this.http.post<Car>(url, car);
   }
