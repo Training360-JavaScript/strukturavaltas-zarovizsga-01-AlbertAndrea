@@ -1,7 +1,7 @@
 // 1/1. Használd a már létrehozott colors modult!
-@use 'src/assets/modules/colors';
+@use '../assets/modules/colors';
 // 1/2. Használd a már létrehozott mixins modult!
-@use 'src/assets/modules/mixins' ;
+@use '../assets/modules/mixins' ;
 
 
 .container {
@@ -33,8 +33,8 @@
   // 4. A mixins modulban találsz egy mixint,
   // amely mobilnézetre állít be új dizájnt.
   // Használd itt ezt a mixint.
-  @include for-hpone-only {
-    background-color: $background-phone;
+  @include mixins.for-phone-only {
+    background-color: colors.$background-phone;
     padding: 50px;
   }
 
@@ -50,7 +50,7 @@
   // 5. Írd meg a mixins modulban a
   // hátteret átváltoztató mixint,
   // és használd itt a colors modul sárga színével.
-
+  @include mixins.set-background-color(colors.$yellow);
 }
 
 .ear,
