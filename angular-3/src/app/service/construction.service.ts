@@ -34,7 +34,7 @@ export class ConstructionService {
     return this.http.delete<Construction>(`${this.apiUrl}${this.entityName}/${id}`)
   }
 
-  createProduct(construction: Construction): Observable<Construction> {
+  create(construction: Construction): Observable<Construction> {
     let url = this.apiUrl;
     return this.http.post<Construction>(url, construction);
   }
